@@ -2,6 +2,7 @@ import time
 import sys
 import subprocess
 import csv
+import emailmodule
 from selenium import webdriver
 
 CONFIG_FILE = "url_list.txt"
@@ -43,6 +44,7 @@ def main():
         uiTime=ui_check(line,10)
         uiOverhead=uiTime - transportTime
         csvResult.writerow([line,str(transportTime),str(uiTime),str(uiOverhead),str(int(uiOverhead/uiTime*100))])
-
+    
+    emailmodule.sendEmail('xxxx@@gmail.com','xxxx')
 if __name__ == '__main__':
   main()
