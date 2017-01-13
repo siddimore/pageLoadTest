@@ -40,7 +40,7 @@ def main():
     for line in f:
         line=line.strip()
         transportTime = transport_check(line,10)
-        uiTime=ui_check(line,1)
+        uiTime=ui_check(line,10)
         uiOverhead=uiTime - transportTime
         csvResult.writerow([line,str(transportTime),str(uiTime),str(uiOverhead),str(int(uiOverhead/uiTime*100))])
 
